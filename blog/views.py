@@ -21,7 +21,7 @@ def post_new(request):
 		form = PostForm(request.POST)
 		if form.is_valid():
 			post = form.save(commit=False)
-			#post.author = User.objects.create(name=request.user)
+			#post.author = User.objects.create(name=request.user.username)
 			user = User.objects.get(username=request.user.username)
 			post.author = user
 			post.published_date = timezone.now()
@@ -37,8 +37,8 @@ def post_edit(request, post_id):
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
             post = form.save(commit=False)
-            print("User: " + str(request.user))
-            #post.author = User.objects.create(name=request.user)
+            #print("User: " + str(request.user))
+            #post.author = User.objects.create(name=request.user.username)
             user = User.objects.get(username=request.user.username)
             post.author = user
             post.published_date = timezone.now()
