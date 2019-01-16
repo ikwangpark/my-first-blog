@@ -80,6 +80,16 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME'  : 'djangogirls',
+#        'USER'  : 'musy2000',
+#        'PASSWORD' : 'musy2000',
+#        'HOST'  : '127.0.0.1',
+#        'PORT'  : '5432',
+#    }
+#}
 
 
 # Password validation
